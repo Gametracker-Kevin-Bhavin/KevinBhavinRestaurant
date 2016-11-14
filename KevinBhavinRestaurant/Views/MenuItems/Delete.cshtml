@@ -1,0 +1,80 @@
+﻿@model KevinBhavinRestaurant.MenuItem
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MenuItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.smallPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.smallPhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.largePhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.largePhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.shortDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shortDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.longDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.longDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

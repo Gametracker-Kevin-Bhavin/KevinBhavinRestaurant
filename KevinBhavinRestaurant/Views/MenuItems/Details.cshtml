@@ -1,0 +1,58 @@
+﻿@model KevinBhavinRestaurant.MenuItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MenuItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> <!-- Header for Menu Item type-->
+            Type: 
+        </dt>
+
+        <dd> <!-- Display the type -->
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt> <!-- Header for Menu Item Name -->
+            Name
+        </dt>
+
+        <dd> <!-- Name of the Menu Item-->
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt> <!-- Header of the Menu Item Picture-->
+            What it looks like
+        </dt>
+
+        <dd> <!-- Display the picture for the Menu Item-->
+            <Img src="~/@Html.DisplayFor(model => Model.largePhoto)" />
+        </dd>
+
+        <dt> <!-- Header for Menu Item Detailed Description-->
+            Detailed Description
+        </dt>
+
+        <dd> <!-- Long Description for the Menu Item -->
+            @Html.DisplayFor(model => model.longDescription)
+        </dd>
+
+        <dt> <!-- Header for the Menu Item Price -->
+            Price $(CAD)
+        </dt>
+
+        <dd> <!-- Price for the Menu Item in CAD-->
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

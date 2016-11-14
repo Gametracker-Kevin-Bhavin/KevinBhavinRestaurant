@@ -1,0 +1,77 @@
+﻿@model IEnumerable<KevinBhavinRestaurant.MenuItem>
+
+@{
+    ViewBag.Title = "Menu Item";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        
+        <th> <!-- Header for Menu Item Name-->
+            Name
+        </th>
+        <th> <!-- Header for Menu List Photo -->
+            What it looks like
+        </th>
+        <!-- Future References
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th> 
+            @Html.DisplayNameFor(model => model.largePhoto)
+        </th>
+           <th>
+            @Html.DisplayNameFor(model => model.longDescription)
+        </th>
+         -->
+        <th> <!-- Header for Summary Description -->
+            Description
+        </th>
+        
+        <th> <!-- Header for Price -->
+            Price ($ CAD)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            <Img src="~/@Html.DisplayFor(modelItem => item.smallPhoto)"/>
+        </td>
+        <!-- Future References
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.largePhoto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.longDescription)
+        </td>
+        -->
+        <td>
+            @Html.DisplayFor(modelItem => item.shortDescription)
+        </td>
+        
+        <td>
+            $ @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
