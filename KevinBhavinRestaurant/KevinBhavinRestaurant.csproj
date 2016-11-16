@@ -186,9 +186,21 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Images\Chicken-Strips-large.png" />
-    <Content Include="Assets\Images\Chicken-Strips.png" />
+    <Content Include="Assets\Images\bgmenu.jpg" />
     <Content Include="Assets\Images\bgimg.png" />
+    <Content Include="Assets\Images\General-tao-large.png" />
+    <Content Include="Assets\Images\General-tao.png" />
+    <Content Include="Assets\Images\Hakka-noodles-large.png" />
+    <Content Include="Assets\Images\Hakka-noodles.png" />
+    <Content Include="Assets\Images\Honey-garlic-large.png" />
+    <Content Include="Assets\Images\Honey-garlic.png" />
+    <Content Include="Assets\Images\Ice-tea-large.png" />
+    <Content Include="Assets\Images\ice-tea.png" />
+    <Content Include="Assets\Images\jumboimg.jpg" />
+    <Content Include="Assets\Images\kitchen.jpg" />
+    <Content Include="Assets\Images\map.PNG" />
+    <Content Include="Assets\Images\place.jpg" />
+    <Content Include="Assets\Images\spices.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

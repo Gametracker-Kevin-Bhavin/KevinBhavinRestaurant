@@ -1,23 +1,94 @@
-﻿body {
+﻿body { /*CSS control for the whole site*/
     padding-top: 50px;
     padding-bottom: 20px;
-    background-image: url('../Assets/Images/bgimg.png');
+    background-image: url('../Assets/Images/bgimg.png'); /* Src: http://www.hdwallpaperspop.com/wp-content/uploads/2016/03/restaurant-wide-hd-wallpaper.jpeg */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: medium;
+    font-weight:800;
 }
 
-#largeimg{
-
+footer{ /* CSS control for the footer*/
+    color: white !important;
 }
+
+.jumbotron{ /* Home page Jumbotron styling */
+    background-image: url('../Assets/Images/jumboimg.jpg'); /* Src:http://www.eaststreetrestaurants.com/assets/img/bg-index.jpg */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    color: white !important;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#menutable{ /*CSS control for table contents and background*/
+    background-image: url('../Assets/Images/bgmenu.jpg'); /* Src: http://www.lovedoughnuts.com/content/img/background.jpg */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 20px;
+    font-size: medium;
+    text-align: center !important;
+}
+
+#detailstable{ /*CSS control for detailed contents and background*/
+    background-image: url('../Assets/Images/bgmenu.jpg'); /* Src: http://www.lovedoughnuts.com/content/img/background.jpg */
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 20px;
+    font-size: medium;
+    text-align: left !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#hometext{
+    color: white !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#menutitle{ /*CSS control for the menu title header on menu page*/
+    color: silver !important;
+    text-align: center !important;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#tableheader{ /*CSS control for the inner table headers*/
+    color: rgb(255, 255, 0);
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+#subheadertable{ /*CSS control for the inner table category headers*/
+    color: rgb(255, 255, 0);
+    text-align: center !important;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+#contacts{ /* Contact page styling */
+    color: white !important;
+    text-shadow: -0.8px 0 black, 0 0.8px black, 0.8px 0 black, 0 -0.8px black;
+}
+
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     background-color: rgba(0, 0, 0, 0.32);
-    color: white;
     padding-left: 15px;
     padding-right: 15px;
 }

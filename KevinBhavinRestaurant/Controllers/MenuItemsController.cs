@@ -20,6 +20,7 @@ namespace KevinBhavinRestaurant.Controllers
             return View(db.MenuItems.ToList());
         }
 
+
         // GET: MenuItems/Details/5
         public ActionResult Details(int? id)
         {

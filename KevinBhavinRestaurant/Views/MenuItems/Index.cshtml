@@ -1,22 +1,99 @@
 ﻿@model IEnumerable<KevinBhavinRestaurant.MenuItem>
 
 @{
-    ViewBag.Title = "Menu Item";
+    ViewBag.Title = "Menu";
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 id="menutitle">@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<h3 id="subheadertable"> Main Dish </h3>
+<table class="table" id="menutable"> <!-- Main Dish Table-->
+    <tr>
+
+        <th>
+            <!-- Header for Menu Item Name-->
+            <div id="tableheader">Name</div>
+        </th>
+        <th>
+            <!-- Header for Menu List Photo -->
+            <div id="tableheader">What it looks like</div>
+        </th>
+        <!-- Future References
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.largePhoto)
+        </th>
+           <th>
+            @Html.DisplayNameFor(model => model.longDescription)
+        </th>
+         -->
+        <th>
+            <!-- Header for Summary Description -->
+            <div id="tableheader">Description</div>
+        </th>
+
+        <th>
+            <!-- Header for Price -->
+            <div id="tableheader">Price (CAD)</div>
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.type == "Main Dish")
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    <Img src="~/@Html.DisplayFor(modelItem => item.smallPhoto)" width=280 height=180 />
+                </td>
+                <!-- Future References
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.largePhoto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.longDescription)
+                </td>
+                -->
+                <td>
+                    @Html.DisplayFor(modelItem => item.shortDescription)
+                </td>
+
+                <td>
+                    $ @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+    }
+
+</table>
+
+<h3 id="subheadertable"> Beverages </h3>
+<table class="table" id="menutable"> <!-- Beverage Table -->
     <tr>
         
         <th> <!-- Header for Menu Item Name-->
-            Name
+            <div id="tableheader">Name</div>
         </th>
         <th> <!-- Header for Menu List Photo -->
-            What it looks like
+            <div id="tableheader">What it looks like</div>
         </th>
         <!-- Future References
         <th>
@@ -30,23 +107,25 @@
         </th>
          -->
         <th> <!-- Header for Summary Description -->
-            Description
+            <div id="tableheader">Description</div>
         </th>
         
         <th> <!-- Header for Price -->
-            Price ($ CAD)
+            <div id="tableheader">Price (CAD)</div>
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
+    if (item.type == "Beverage")
+    {
     <tr>
         
         <td>
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
-            <Img src="~/@Html.DisplayFor(modelItem => item.smallPhoto)"/>
+            <Img src="~/@Html.DisplayFor(modelItem => item.smallPhoto)" width=280 height=180/>
         </td>
         <!-- Future References
         <td>
@@ -67,11 +146,12 @@
             $ @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
         </td>
     </tr>
-}
+        }
+    }
 
 </table>
