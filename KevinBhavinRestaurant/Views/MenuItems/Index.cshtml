@@ -7,7 +7,7 @@
 <h2 id="menutitle">@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <!--@Html.ActionLink("Create New", "Create")-->
 </p>
 <h3 id="subheadertable"> Main Dish </h3>
 <table class="table" id="menutable"> <!-- Main Dish Table-->
@@ -75,9 +75,9 @@
                     $ @Html.DisplayFor(modelItem => item.price)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                    <!--@Html.ActionLink("Edit", "Edit", new { id = item.id }) | -->
+                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                    <!--@Html.ActionLink("Delete", "Delete", new { id = item.id }) -->
                 </td>
             </tr>
         }
@@ -146,9 +146,9 @@
             $ @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-            @Html.ActionLink("Details", "Details", new { id = item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            <!-- @Html.ActionLink("Edit", "Edit", new { id = item.id }) | -->
+            @Html.ActionLink("Details", "Details", new { id = item.id }) 
+            <!-- @Html.ActionLink("Delete", "Delete", new { id = item.id }) -->
         </td>
     </tr>
         }
