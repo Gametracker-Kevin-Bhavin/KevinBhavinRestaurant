@@ -4,12 +4,12 @@
     ViewBag.Title = "Menu";
 }
 
-<h2 id="menutitle">@ViewBag.Title</h2>
+<h1 id="menutitle">@ViewBag.Title</h1>
 
 <p>
     <!--@Html.ActionLink("Create New", "Create")-->
 </p>
-<h3 id="subheadertable"> Main Dish </h3>
+<h2 id="subheadertable"> Main Dish </h2>
 <table class="table" id="menutable"> <!-- Main Dish Table-->
     <tr>
 
@@ -50,7 +50,7 @@
         {
             <tr>
 
-                <td>
+                <td id="pricecss">
                     @Html.DisplayFor(modelItem => item.name)
                 </td>
                 <td>
@@ -67,11 +67,11 @@
                     @Html.DisplayFor(modelItem => item.longDescription)
                 </td>
                 -->
-                <td>
+                <td id="shortdesccss">
                     @Html.DisplayFor(modelItem => item.shortDescription)
                 </td>
 
-                <td>
+                <td id="pricecss">
                     $ @Html.DisplayFor(modelItem => item.price)
                 </td>
                 <td>
@@ -85,7 +85,7 @@
 
 </table>
 
-<h3 id="subheadertable"> Beverages </h3>
+<h2 id="subheadertable"> Beverages </h2>
 <table class="table" id="menutable"> <!-- Beverage Table -->
     <tr>
         
@@ -121,7 +121,7 @@
     {
     <tr>
         
-        <td>
+        <td id="pricecss">
             @Html.DisplayFor(modelItem => item.name)
         </td>
         <td>
@@ -138,11 +138,11 @@
             @Html.DisplayFor(modelItem => item.longDescription)
         </td>
         -->
-        <td>
+        <td id="shortdesccss">
             @Html.DisplayFor(modelItem => item.shortDescription)
         </td>
         
-        <td>
+        <td id="pricecss">
             $ @Html.DisplayFor(modelItem => item.price)
         </td>
         <td>

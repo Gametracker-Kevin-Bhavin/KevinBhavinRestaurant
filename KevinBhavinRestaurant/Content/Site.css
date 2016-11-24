@@ -17,6 +17,11 @@ footer{ /* CSS control for the footer*/
     color: white !important;
 }
 
+td, th{
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
 .jumbotron{ /* Home page Jumbotron styling */
     background-image: url('../Assets/Images/jumboimg.jpg'); /* Src:http://www.eaststreetrestaurants.com/assets/img/bg-index.jpg */
     background-repeat: no-repeat;
@@ -37,7 +42,6 @@ footer{ /* CSS control for the footer*/
     margin-right: auto;
     position: relative;
     border-radius: 20px;
-    font-size: medium;
     text-align: center !important;
 }
 
@@ -65,11 +69,21 @@ footer{ /* CSS control for the footer*/
 #menutitle{ /*CSS control for the menu title header on menu page*/
     color: silver !important;
     text-align: center !important;
+    font-size: 60px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#shortdesccss{ /*CSS control for the menu description on menu page*/
+    font-size: 25px !important;
+}
+
+#pricecss, dt, dd{ /*CSS control for the menu description on menu page*/
+    font-size: 20px !important;
 }
 
 #tableheader{ /*CSS control for the inner table headers*/
     color: rgb(255, 255, 0);
+    font-size: 25px !important;
     text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
 }
 
