@@ -10,17 +10,20 @@ using KevinBhavinRestaurant;
 
 namespace KevinBhavinRestaurant.Controllers
 {
+
+    [Authorize(Roles ="admin")]
     public class MenuItemsController : Controller
     {
         private RestaurantContext db = new RestaurantContext();
 
+        [AllowAnonymous]
         // GET: MenuItems
         public ActionResult Index()
         {
             return View(db.MenuItems.ToList());
         }
 
-
+        [AllowAnonymous]
         // GET: MenuItems/Details/5
         public ActionResult Details(int? id)
         {
@@ -36,12 +39,14 @@ namespace KevinBhavinRestaurant.Controllers
             return View(menuItem);
         }
 
+        [Authorize]
         // GET: MenuItems/Create
         public ActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         // POST: MenuItems/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -59,6 +64,7 @@ namespace KevinBhavinRestaurant.Controllers
             return View(menuItem);
         }
 
+        [Authorize]
         // GET: MenuItems/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -74,6 +80,7 @@ namespace KevinBhavinRestaurant.Controllers
             return View(menuItem);
         }
 
+        [Authorize]
         // POST: MenuItems/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -90,6 +97,7 @@ namespace KevinBhavinRestaurant.Controllers
             return View(menuItem);
         }
 
+        [Authorize]
         // GET: MenuItems/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -105,6 +113,7 @@ namespace KevinBhavinRestaurant.Controllers
             return View(menuItem);
         }
 
+        [Authorize]
         // POST: MenuItems/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
