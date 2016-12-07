@@ -1,0 +1,56 @@
+﻿@model KevinBhavinRestaurant.ViewModel.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Takeout List";
+}
+
+<h3 id="menutitle">
+    <em>Review</em> your cart:
+</h3>
+<p class="button" id="subheadertable">
+    @Html.ActionLink("Checkout>> ", "AddressAndPayment", "Checkout")
+</p>
+<div id="update-message">
+</div>
+<table id="menutable">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Price (each)
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in
+                Model.CartItems)
+    {
+        <tr id="row-@item.Id">
+            <td>
+                @Html.ActionLink(item.MenuItem.name, "Details", "MenuItems", new { id = item.Id }, null)
+            </td>
+            <td>
+                @item.MenuItem.price
+            </td>
+            <td id="item-count-@item.Id">
+                @item.Count
+            </td>
+            <td>
+                <a href="#" class="RemoveLink" data-id="@item.Id">Remove from cart</a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Total
+        </td>
+        <td></td>
+        <td></td>
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+    </tr>
+</table>
+

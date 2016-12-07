@@ -43,6 +43,9 @@
         </dd>
 
     </dl>
+    <p class="button">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.id }, "")
+    </p>
 </div>
 <p>
     @if (User.IsInRole("admin"))
