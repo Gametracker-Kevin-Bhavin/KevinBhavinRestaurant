@@ -33,17 +33,7 @@ namespace KevinBhavinRestaurant.Controllers
                 if (string.Equals(values["PromoCode"], PromoCode,
                     StringComparison.OrdinalIgnoreCase) == false)
                 {
-                    order.name = User.Identity.Name;
-                    order.datetime = DateTime.Now;
-
-                    //Save Order
-                    storeDB.Orders.Add(order);
-                    storeDB.SaveChanges();
-                    //Process the order
-                    var cart = ShoppingCart.GetCart(this.HttpContext);
-                    cart.CreateOrder(order);
-
-                    return RedirectToAction("Complete", new { id = order.id });
+                    return View(order);
                 }
                 else
                 {
