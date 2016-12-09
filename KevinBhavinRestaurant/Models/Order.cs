@@ -22,8 +22,6 @@ namespace KevinBhavinRestaurant.Models
         public DateTime? datetime { get; set; }
 
         [ScaffoldColumn(false)]
-        [Required(ErrorMessage = "Name is required")]
-        [StringLength(256)]
         public string name { get; set; }
 
         [Required(ErrorMessage = "Address is required")]

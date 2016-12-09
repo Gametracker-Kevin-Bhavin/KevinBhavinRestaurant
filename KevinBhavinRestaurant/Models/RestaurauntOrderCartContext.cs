@@ -20,48 +20,6 @@ namespace KevinBhavinRestaurant.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Order>()
-                .Property(e => e.name)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.address)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.city)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.state)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.country)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.postalcode)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.phone)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.email)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Order>()
-                .Property(e => e.total);
-
-            modelBuilder.Entity<Order>()
-                .HasMany(e => e.OrderDetails)
-                .WithRequired(e => e.Order)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<OrderDetail>()
-                .Property(e => e.UnitPrice);
             modelBuilder.Entity<MenuItem>()
                 .Property(e => e.type)
                 .IsUnicode(false);

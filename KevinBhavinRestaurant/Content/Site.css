@@ -115,6 +115,13 @@ td, th{
     padding-right: -15px !important;
 }
 
+#update-message{
+    color:yellow !important;
+    font-size: 18px !important;
+    padding-left: -15px !important;
+    padding-right: -15px !important;
+}
+
 
 
 /* Set padding to keep content from hitting the edges */

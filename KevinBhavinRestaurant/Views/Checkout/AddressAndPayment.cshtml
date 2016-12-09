@@ -1,0 +1,30 @@
+﻿@model KevinBhavinRestaurant.Models.Order
+@{
+    ViewBag.Title = "Address And Payment";
+}
+
+@using (Html.BeginForm())
+{
+    <h2 id="menutitle">Address And Payment</h2>
+    <fieldset id="subheadertable">
+        <h2 id="tableheader">Shipping Information</h2>
+        @Html.EditorForModel()
+    </fieldset>
+    <fieldset id="menutable">
+        <h2 id="tableheader">Payment</h2>
+        <p>
+            We're running a promotion: all food is free
+            with the promo code: "FREE"
+        </p>
+        <div class="editor-label">
+            @Html.Label("Promo Code")
+        </div>
+        <div class="editor-field">
+            @Html.TextBox("PromoCode")
+        </div>
+        <br />
+    </fieldset>
+    <div class="form-group">
+        <input type="submit" value="Submit Order" />
+    </div>
+}

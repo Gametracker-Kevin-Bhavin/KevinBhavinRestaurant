@@ -41,16 +41,19 @@
         <dd> <!-- Price for the Menu Item in CAD-->
             @Html.DisplayFor(model => model.price)
         </dd>
-
+        <dt>
+            @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.id }, "")
+        </dt>
+        @if (User.IsInRole("admin"))
+        {
+            <dt>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.id })
+            </dt>
+        }
+        <dd>
+            @Html.ActionLink("Back to List", "Index")
+        </dd>
     </dl>
-    <p class="button">
-        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.id }, "")
-    </p>
+    
 </div>
-<p>
-    @if (User.IsInRole("admin"))
-    {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.id })
-    }
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
