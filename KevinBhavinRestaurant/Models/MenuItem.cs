@@ -29,6 +29,7 @@ namespace KevinBhavinRestaurant
         [StringLength(256)]
         public string longDescription { get; set; }
 
-        public float? price { get; set; }
+        [Column(TypeName = "numeric")]
+        public decimal price { get; set; }
     }
 }

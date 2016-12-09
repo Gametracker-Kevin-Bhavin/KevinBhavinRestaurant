@@ -17,7 +17,8 @@ namespace KevinBhavinRestaurant.Models
 
         public int Quantity { get; set; }
 
-        public float? UnitPrice { get; set; }
+        [Column(TypeName = "numeric")]
+        public decimal UnitPrice { get; set; }
 
         public virtual MenuItem MenuItem { get; set; }
 

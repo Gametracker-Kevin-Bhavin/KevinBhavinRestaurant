@@ -7,7 +7,7 @@ using KevinBhavinRestaurant.Models;
 
 namespace KevinBhavinRestaurant.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class CheckoutController : Controller
     {
         RestaurauntOrderCartContext storeDB = new RestaurauntOrderCartContext();
@@ -56,24 +56,12 @@ namespace KevinBhavinRestaurant.Controllers
                 return View(order);
             }
         }
-
         //
         // GET: /Checkout/Complete
         public ActionResult Complete(int id)
         {
             // Validate customer owns this order
-            bool isValid = storeDB.Orders.Any(
-                o => o.id == id &&
-                o.name == User.Identity.Name);
-
-            if (isValid)
-            {
-                return View(id);
-            }
-            else
-            {
-                return View("Error");
-            }
+            return View("Error");
         }
     }
 }

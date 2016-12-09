@@ -9,6 +9,6 @@ namespace KevinBhavinRestaurant.ViewModel
     public class ShoppingCartViewModel
     {
         public List<Cart> CartItems { get; set; }
-        public float CartTotal { get; set; }
+        public decimal CartTotal { get; set; }
     }
 }

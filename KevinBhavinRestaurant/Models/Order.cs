@@ -54,8 +54,9 @@ namespace KevinBhavinRestaurant.Models
         [StringLength(256)]
         public string email { get; set; }
 
+        [Column(TypeName = "numeric")]
         [ScaffoldColumn(false)]
-        public float? total { get; set; }
+        public decimal total { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

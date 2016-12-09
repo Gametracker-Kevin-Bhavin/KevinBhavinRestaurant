@@ -113,12 +113,12 @@ namespace KevinBhavinRestaurant.Models
             return count ?? 0;
         }
 
-        public float GetTotal()
+        public decimal GetTotal()
         {
             // Multiply album price by count of that album to get 
             // the current price for each of those albums in the cart
             // sum all album price totals to get the cart total
-            float? total = (from cartItems in storeDB.Carts
+            decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.sessionid == ShoppingCartId
                               select (int?)cartItems.Count *
                               cartItems.MenuItem.price).Sum();
@@ -126,9 +126,9 @@ namespace KevinBhavinRestaurant.Models
             return total ?? 0;
         }
 
-        public float? CreateOrder(Order order)
+        public int CreateOrder(Order order)
         {
-            float? orderTotal = 0;
+            decimal orderTotal = 0;
 
             var cartItems = GetCartItems();
             // Iterate over the items in the cart, 
@@ -137,7 +137,7 @@ namespace KevinBhavinRestaurant.Models
             {
                 var orderDetail = new OrderDetail
                 {
-                    Id = item.Id,
+                    MenuId = item.MenuItem.id,
                     OrderId = order.id,
                     UnitPrice = item.MenuItem.price,
                     Quantity = item.Count
