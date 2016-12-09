@@ -44,7 +44,8 @@ namespace KevinBhavinRestaurant.Models
                     MenuId = menuitem.id,
                     sessionid = ShoppingCartId,
                     Count = 1,
-                    DateCreated = DateTime.Now
+                    DateCreated = DateTime.Now,
+                    MenuItem = menuitem
                 };
                 storeDB.Carts.Add(cartItem);
             }
@@ -137,16 +138,18 @@ namespace KevinBhavinRestaurant.Models
             {
                 var orderDetail = new OrderDetail
                 {
-                    MenuId = item.MenuItem.id,
                     OrderId = order.id,
+                    MenuId = item.MenuItem.id,
+                    Quantity = item.Count,
                     UnitPrice = item.MenuItem.price,
-                    Quantity = item.Count
+                    MenuItem = item.MenuItem,
+                    Order = order
                 };
                 // Set the order total of the shopping cart
                 orderTotal += (item.Count * item.MenuItem.price);
 
                 storeDB.OrderDetails.Add(orderDetail);
-
+                storeDB.SaveChanges();
             }
             // Set the order's total to the orderTotal count
             order.total = orderTotal;

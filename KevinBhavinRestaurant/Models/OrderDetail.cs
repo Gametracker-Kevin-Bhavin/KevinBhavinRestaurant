@@ -11,8 +11,10 @@ namespace KevinBhavinRestaurant.Models
     {
         public int Id { get; set; }
 
+        [ForeignKey("Order")]
         public int OrderId { get; set; }
 
+        [ForeignKey("MenuItem")]
         public int MenuId { get; set; }
 
         public int Quantity { get; set; }

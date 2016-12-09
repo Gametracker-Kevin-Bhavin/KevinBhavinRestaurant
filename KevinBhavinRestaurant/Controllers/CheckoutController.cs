@@ -45,9 +45,9 @@ namespace KevinBhavinRestaurant.Controllers
                     storeDB.SaveChanges();
                     //Process the order
                     var cart = ShoppingCart.GetCart(this.HttpContext);
-                    cart.CreateOrder(order);
+                    
 
-                    return RedirectToAction("Complete", new { id = order.id });
+                    return RedirectToAction("Complete", new { id = cart.CreateOrder(order) });
                 }
             }
             catch
@@ -61,7 +61,18 @@ namespace KevinBhavinRestaurant.Controllers
         public ActionResult Complete(int id)
         {
             // Validate customer owns this order
-            return View("Error");
+            bool isValid = storeDB.Orders.Any(
+                o => o.id == id &&
+                o.name== User.Identity.Name);
+
+            if (isValid)
+            {
+                return View(id);
+            }
+            else
+            {
+                return View("Error");
+            }
         }
     }
 }

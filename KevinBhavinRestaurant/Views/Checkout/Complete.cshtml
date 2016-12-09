@@ -1,10 +1,10 @@
-﻿@model id
+﻿@model int
 @{
     ViewBag.Title = "Checkout Complete";
 }
-<h2>Checkout Complete</h2>
-<p>Thanks for your order! Your order number is: @Model</p>
-<p>
+<h2 id="menutitle">Checkout Complete</h2>
+<p id="menutable">Thanks for your order! Your order number is: @Model</p>
+<p id="menutable">
     How about ordering for more food in our
     @Html.ActionLink("Menu", "Index", "MenuItems")
 </p>
