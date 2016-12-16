@@ -140,7 +140,7 @@ td, th{
 }
 
 #update-message{
-    color:yellow !important;
+    color:orangered !important;
     font-size: 18px !important;
     padding-left: -15px !important;
     padding-right: -15px !important;

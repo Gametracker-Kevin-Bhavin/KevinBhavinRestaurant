@@ -3,6 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace KevinBhavinRestaurant.Models
 {
+    // Admin Credentials for the CRUD methods:
+    // Admin ID: admin@centennialcollege.ca
+    // Admin PW: @Admin123
     public class ExternalLoginConfirmationViewModel
     {
         [Required]

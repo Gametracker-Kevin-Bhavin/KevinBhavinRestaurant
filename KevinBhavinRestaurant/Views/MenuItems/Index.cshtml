@@ -84,6 +84,9 @@
                         </div>
                     }
                     <div class="checkbtn">
+                        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.id }, "")
+                    </div>
+                    <div class="checkbtn">
                         @Html.ActionLink("Details", "Details", new { id = item.id })
                     </div>
                     @if (User.IsInRole("admin"))
@@ -166,6 +169,9 @@
                     @Html.ActionLink("Edit", "Edit", new { id = item.id })
                 </div>
             }
+            <div class="checkbtn">
+               @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = item.id }, "")
+            </div>
             <div class="checkbtn">
                 @Html.ActionLink("Details", "Details", new { id = item.id })
             </div>
