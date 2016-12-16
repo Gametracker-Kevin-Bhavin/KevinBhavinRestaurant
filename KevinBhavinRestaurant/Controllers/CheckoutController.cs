@@ -4,10 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using KevinBhavinRestaurant.Models;
+using KevinBhavinRestaurant;
 
 namespace KevinBhavinRestaurant.Controllers
 {
-    [AllowAnonymous]
+    [Authorize(Roles = "admin")]
     public class CheckoutController : Controller
     {
         RestaurauntOrderCartContext storeDB = new RestaurauntOrderCartContext();
@@ -15,6 +16,7 @@ namespace KevinBhavinRestaurant.Controllers
 
         //
         // GET: /Checkout/AddressAndPayment
+        [Authorize]
         public ActionResult AddressAndPayment()
         {
             return View();
@@ -22,6 +24,7 @@ namespace KevinBhavinRestaurant.Controllers
 
         //
         // POST: /Checkout/AddressAndPayment
+        [Authorize]
         [HttpPost]
         public ActionResult AddressAndPayment(FormCollection values)
         {
@@ -58,6 +61,7 @@ namespace KevinBhavinRestaurant.Controllers
         }
         //
         // GET: /Checkout/Complete
+        [Authorize]
         public ActionResult Complete(int id)
         {
             // Validate customer owns this order

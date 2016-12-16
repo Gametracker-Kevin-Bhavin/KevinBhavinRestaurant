@@ -79,12 +79,18 @@
                 <td>
                     @if (User.IsInRole("admin"))
                     {
-                        @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                        <div class="checkbtn">
+                            @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                        </div>
                     }
-                    @Html.ActionLink("Details", "Details", new { id = item.id })
+                    <div class="checkbtn">
+                        @Html.ActionLink("Details", "Details", new { id = item.id })
+                    </div>
                     @if (User.IsInRole("admin"))
                     {
-                        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        <div class="checkbtn">
+                            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                        </div>
                     }
                 </td>
             </tr>
@@ -155,12 +161,19 @@
         </td>
         <td>
             @if (User.IsInRole("admin"))
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) 
+                    {
+                <div class="checkbtn">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id })
+                </div>
             }
-            @Html.ActionLink("Details", "Details", new { id = item.id })
-            @if (User.IsInRole("admin")) { 
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            <div class="checkbtn">
+                @Html.ActionLink("Details", "Details", new { id = item.id })
+            </div>
+            @if (User.IsInRole("admin"))
+                    {
+                <div class="checkbtn">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </div>
             }
         </td>
     </tr>

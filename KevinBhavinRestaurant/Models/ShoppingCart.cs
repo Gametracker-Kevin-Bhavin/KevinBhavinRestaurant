@@ -45,7 +45,6 @@ namespace KevinBhavinRestaurant.Models
                     sessionid = ShoppingCartId,
                     Count = 1,
                     DateCreated = DateTime.Now,
-                    MenuItem = menuitem
                 };
                 storeDB.Carts.Add(cartItem);
             }

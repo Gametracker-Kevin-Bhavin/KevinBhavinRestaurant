@@ -45,6 +45,14 @@ td, th{
     text-align: center !important;
 }
 
+#carttable{ /*CSS control for cart table*/
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 20px;
+    text-align: center !important;
+}
+
 #detailstable{ /*CSS control for detailed contents and background*/
     background-image: url('../Assets/Images/bgmenu.jpg'); /* Src: http://www.lovedoughnuts.com/content/img/background.jpg */
     background-repeat: no-repeat;
@@ -115,12 +123,29 @@ td, th{
     padding-right: -15px !important;
 }
 
+.checkbtn{ /* Header formatting for checkoutbtn */
+    color:yellow !important;
+    font-size: 22px !important;
+    text-align: center !important;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+
+}
+
+.checkbtn a{ /* Header formatting for checkoutbtn */
+    color:yellow !important;
+    font-size: 22px !important;
+    text-align: center !important;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+
+}
+
 #update-message{
     color:yellow !important;
     font-size: 18px !important;
     padding-left: -15px !important;
     padding-right: -15px !important;
 }
+
 
 
 
